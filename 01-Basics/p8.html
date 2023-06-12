@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASCIS</title>
+</head>
+<body>
+    <h3>conditional statements</h3>
+    <script>
+        var x = prompt("Enter the value?"); /* window objects / BOM > browser object modal */
+
+        document.write(`<h1>Typeof Method ${typeof(x)}</h1>`);
+
+        var a = Number(x); /* used to convert the any type into number */
+
+        if (a === 123) {
+            document.write(`<h1> ${a} is equal to 123 </h1>`); /* DOM */
+        } else if (a > 123) {
+            document.write(`<h1> ${a} is greater  than to 123 </h1>`);
+        } else  if (a < 123) {
+            document.write(`<h1> ${a} is lesser  than to 123 </h1>`); 
+        }  else  {
+            document.write(`<h1>check your input </h1>`); /* other than number */
+        }
+    </script>
+</body>
+</html>
