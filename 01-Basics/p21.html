@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASCIS</title>
+</head>
+<body>
+    <h2>With parameter, Without Return Value Example:</h2>
+    <script>
+        function studDetails(firstName, lastName){
+
+            document.write(`<p>First Parameter Value is :${firstName}</p>`);
+            document.write(`<p>Last Parameter Value is :${lastName}</p>`);
+
+             let fn, ln, fullName;
+
+             fn = firstName;
+             ln = lastName;
+
+             document.write(`<p>First Variable Value is :${fn}</p>`);
+             document.write(`<p>Last Variable Value is :${ln}</p>`);
+
+             fullName = fn + " " + ln;
+             document.write(`<p>Full Name variable Value is :${fullName}</p>`);
+
+        }
+        studDetails("HTML", "CSS");
+    </script>
+</body>
+</html>

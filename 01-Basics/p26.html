@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASCIS</title>
+</head>
+<body>
+    <h3>Scope</h3>
+    <script>
+        var x = 15;
+
+        /* var is a weeker signal and always have global scope */
+        /*
+         let and const are block scope variables
+         */
+           // const a = 246;
+
+           if(x > 12) {
+            var a = 155; // global
+            let b = 122; // block, (re assign the value)
+            const c = 144; // block (fixed value - cann't re-assign the value)
+            document.write(`<h3>Global A (block scope) = ${ a } </h3>`); // block scope
+            document.write(`<h3>Local B (block scope) = ${ b } </h3>`); // block scope
+            document.write(`<h3>Local C (block scope) = ${ c } </h3>`); // block scope
+           }
+
+           document.write(`<h3>Global  (global scope) = ${ a } </h3>`); // global scope
+        //    document.write(`<h3>Local B (block scope) = ${ b } </h3>`); // block scope
+        //    document.write(`<h3>Local C (block scope) = ${ c } </h3>`); // block scope
+           
+    </script>
+</body>
+</html>
