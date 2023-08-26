@@ -13,7 +13,7 @@
 
     <h3 id="out"></h3>
 
-     <form onsubmit="subHandler(event)" onreset="resetHandler()">
+     <form action="" method="POST" onsubmit="subHandler(event)" onreset="resetHandler()">
         <label for="">Username</label>
         <input type="text" name="user" id="user">
         <br><br>
@@ -23,7 +23,7 @@
         <input type="checkbox" name="showPass" id="showPass"> <span id="txt">Show Password</span>
         <br><br>
 
-       <button type="submit">Login</button>
+        <button type="submit">Login</button>
         <input type="reset" value="Reset">
         <br><br>
     </form>
@@ -35,16 +35,16 @@
             let user = document.getElementById("user").value;
             let pass = document.getElementById("pass").value;
 
-            document.getElementById("out").innerText = ` username = ${user} and password is ${pass}`;
+            document.getElementById("out").innerText = `username = ${user} and password is ${pass}`;
          }
 
          function resetHandler() {
-            alert("On Reset Event");
+            alert("form input is cleared");
+            window.location.reload();
          }
 
           // script to hide and display password
-          document.getElementById('showpass').addEventListener('click', function()
-          {
+          document.getElementById('showPass').addEventListener('click', function() {
              const pa = document.getElementById('pass');
               if(pa.type === "password") {
                 pa.type = "text";

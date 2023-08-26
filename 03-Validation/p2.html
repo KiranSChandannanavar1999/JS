@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-VALIDATION</title>
+</head>
+<body>
+    <center>
+        <h1>Email validation</h1>
+    </center>
+    <hr>
+
+    <form action="" autocomplete="off">
+        <label for="user">Username</label>
+        <input type="email" name="email" id="email" onkeyup="validate()">
+        <strong id="status"></strong>
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script> 
+        function validate(){
+            var email = document.getElementById('email').value;
+            var status = document.getElementById('status');
+            console.log('email =', email.value);
+
+            let regex = /^\S+@\S+\.\S+$/; // Example : admin@gamil.com
+
+            if(email.length == 0){
+                status.innerText = `Enter user email`;
+                status.style.color = "orangered";  
+            }
+                 else {
+                    if(regex.test(email) === false){
+                        status.innerText = `Invalid email.`;
+                        status.style.color = "orangered";
+                    } else{
+                        status.innerText = `Valid email.`;
+                        status.style.color = "green";
+                    }
+                 }
+                 setTimeout(function(){
+                      status.innerText= ``;
+                 },5000);
+            }
+    </script>
+</body>
+</html> 9017821858

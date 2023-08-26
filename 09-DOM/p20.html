@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 50%;
+            margin: auto;
+            border: 1px solid #222;
+            display: flex;
+            justify-content:space-evenly;
+            padding: 20px;
+        }
+
+        .container select {
+            width: 200px;
+        }
+
+        .container .btn{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-around;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document.querySelectorAll and replaceChildren</h1>
+
+ <form>
+    <section class="container">
+        <div class="left">
+        <select name="no" id="no" size="10" multiple="multiple">
+            <option value="blue">blue</option>
+            <option value="">Orange</option>
+            <option value="">Yellow</option>
+            <option value="">Grey</option>
+            <option value="">Black</option>
+            <option value="">Red</option>
+            <option value="">SkyBlue</option>
+            <option value="">Pink</option>
+            <option value="">gold<c/option>
+            <option value="">White<c/option>
+            <option value="">Maroon<c/option>
+        </select>
+        </div>
+        <div class="btn">
+            <button id="add">Add Selection</button>
+            <button id="remove">Remove Selection</button>
+        </div>
+        <div class="right">
+            <select name="yes" id="yes" size="10" multiple="multiple"></select>
+        </div>
+    </section>
+ </form>
+
+ <script>
+       let noSel = document.querySelector('#no');
+       let yesSel = document.querySelector('#yes');
+
+       let addBtn = document.querySelector('#add');
+       let removeBtn = document.querySelector('#remove');
+
+       addBtn.addEventListener('click', function (e){
+        e.preventDefault()
+        // alert("add btn clicked")
+        let selOpt = document.querySelectorAll("#no option:checked");
+        console.log('selected options =', selOpt);
+
+        let exstOpt = document.querySelectorAll("#yes option");
+        yesSel.replaceChildren(...selOpt, ...exstOpt); /* Array -> parameter */
+       });
+
+       removeBtn.addEventListener('click', function (e){
+        e.preventDefault();
+        // alert("remove btn clicked")
+        let exstOpt = document.querySelectorAll("#yes option:checked");
+
+        let selOpt = document.querySelectorAll("#no option");
+        noSel.replaceChildren(...exstOpt, ...selOpt); 
+       });
+ </script>
+</body>
+</html>

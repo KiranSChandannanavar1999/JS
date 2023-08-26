@@ -11,15 +11,17 @@
     </center>
 
     <script>
-        function howAreYou(question, yes, no) {
-            if(confirm(question)){
+        function howareyou(question, yes, no) {
+            if(confirm(question)) {
                 yes();
-            }
-            else {
+            } else {
                 no();
             };
         }
-        howAreYou("How is your health?", function(){document.write("GOOD")}, function(){document.write("BAD")});
+
+        howareyou("HOw is your health", function(){document.write("GOOD")}, function(){document.write("BAD")});
     </script>
+    
 </body>
 </html>
+

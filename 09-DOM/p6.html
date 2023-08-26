@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <section id="blk"></section>
+
+    <button type="button" onclick="addContent">Add Block</button>
+    <button type="button" onclick="removeContent">Remove Content</button>
+
+    <script>
+        function addContent(){
+            let content = `
+            <h1>Welcome to Js</h1>
+            <h3>Sub title of JS</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique voluptate nisi sit, blanditiis, fuga corrupti in laborum necessitatibus ullam ad odio facilis reprehenderit quibusdam distinctio doloribus minus dolores iure quos.</p>
+            <button onclick="removeContent()">Remove Block</button>`
+
+            document.getElementById("blk").innerHTML = content;
+        }
+
+        function removeContent() {
+            document.getElementById("blk").innerHTML = "";
+        }
+    </script>
+
+    <hr>
+
+    <button type="button" onclick="addElement();">Create Element</button>
+    <script>
+         function addElement(){
+            let p = document.createElement("p");
+            console.log(p);
+
+            let data = document.createTextNode("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique voluptate nisi sit, blanditiis, fuga corrupti in laborum necessitatibus ullam ad odio facilis reprehenderit quibusdam distinctio doloribus minus dolores iure quos.");
+            console.log(data);
+
+            p.appendChild(data);
+            console.log(p);
+
+            document.body.appendChild(p);
+         }
+    </script>
+</body>
+</html>
