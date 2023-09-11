@@ -22,6 +22,9 @@
         Object.defineProperty(user, 'fullName', {
             get: function () {
                 return this.name + " " + this.surName;
+            },
+            set: function(value) {
+                [this.name, this.surName] = value.split(" ");
             }
         });
 
